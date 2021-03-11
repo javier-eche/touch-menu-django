@@ -27,8 +27,12 @@ from product import views
 router2 = routers.DefaultRouter()
 router2.register('', views.ProductViewSet)
 
+
+from rest_framework.authtoken import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/orders/', include(router.urls)),
-    path('api/v1/products/', include(router2.urls))
+    path('api/v1/products/', include(router2.urls)),
+    path('api_generate_token/', views.obtain_auth_token),
 ]
