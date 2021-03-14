@@ -14,6 +14,7 @@ class Product(models.Model):
     description = models.CharField(max_length=100, null=False, blank=False)
     image = models.CharField(max_length=100, null=False, blank=False)
     type_product = models.CharField(max_length=15, choices=TYPES_PRODUCT)
+    price = models.DecimalField(max_digits=10, default=0, decimal_places=2)
 
     class Meta:
         ordering = ['type_product']
